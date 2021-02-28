@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import { CounterBy4 } from './Counter';
 import './App.css';
+import axios from 'axios';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Routes } from './Routes';
 
-function App() {
+const customAxios = axios.create({ baseURL: 'https://pokeapi.co/api/v2/' });
+const App = () => {
+  // demo of why it's better to use prevState when updating a state that depends on a previous value
+  // return (
+  //   <div>
+  //     <CounterBy4/>
+  //   </div>
+  // );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes />
+    </Router>
   );
-}
+};
 
 export default App;
