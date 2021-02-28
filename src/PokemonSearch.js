@@ -29,14 +29,14 @@ const PokemonSearch = () => {
   };
 
   return (
-    <div>
-      <h1>Nome do pokemon.</h1>
+    <div style={{ textAlign: 'center' }}>
+      <h1>Digite o nome do pokemon:</h1>
       <input
         onKeyPress={handleEnterKeyPress}
         type='text'
         onChange={handlePokemonInput}
       />
-      <button onClick={fetchPokemon}>Fetch Pokemon Data</button>
+      <button onClick={fetchPokemon}>Buscar Pokemon</button>
     </div>
   );
 };
