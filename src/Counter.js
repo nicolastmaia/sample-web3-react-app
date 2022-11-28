@@ -1,54 +1,26 @@
-import { Component } from 'react';
-import './App.css';
+import React, { useState } from 'react';
 
-class CounterBy4 extends Component {
-  state = {
-    count: 0
+const CounterFromProps = (props) => {
+  return <h2>{props.counter}</h2>;
+};
+
+export const Counter = () => {
+  const [counter, setCounter] = useState(0);
+
+  const handlePlusClick = () => {
+    setCounter((prevState) => prevState + 1);
   };
 
-  Increment = () => {
-    this.setState(prevState => ({
-      count: prevState.count + 1
-    }));
-    this.setState(prevState => ({
-      count: prevState.count + 1
-    }));
-    this.setState(prevState => ({
-      count: prevState.count + 1
-    }));
-    this.setState(prevState => ({
-      count: prevState.count + 1
-    }));
+  const handleMinusClick = () => {
+    setCounter((prevState) => prevState - 1);
   };
 
-  IncrementWithoutPrevState = () => {
-    this.setState(() => ({
-      count: this.state.count + 1
-    }));
-    this.setState(() => ({
-      count: this.state.count + 1
-    }));
-    this.setState(() => ({
-      count: this.state.count + 1
-    }));
-    this.setState(() => ({
-      count: this.state.count + 1
-    }));
-  };
-
-  render() {
-    return (
-      <div>
-        <button onClick={this.IncrementWithoutPrevState}>
-          Increment 4 times without PrevState
-        </button>
-        <button onClick={this.Increment}>
-          Increment 4 times with PrevState
-        </button>
-        <h1>Count: {this.state.count}</h1>
-      </div>
-    );
-  }
-}
-
-export {CounterBy4};
+  return (
+    <div>
+      <h1>{counter}</h1>
+      <button onClick={handlePlusClick}>Somar</button>
+      <button onClick={handleMinusClick}>Subtrair</button>
+      <CounterFromProps counter={counter}></CounterFromProps>
+    </div>
+  );
+};

@@ -25,22 +25,34 @@ export const PokemonInfo = () => {
     loadPokemonInfo();
   }, [pokemonName]);
 
-  const renderPokemonType = () => {
-    return pokemon.types.map((item) => {
-      return <li>{item.type.name}</li>;
-    });
+  const PokemonTypes = () => {
+    return (
+      <ul>
+        {pokemon.types.map((item) => {
+          return <li>{item.type.name}</li>;
+        })}
+      </ul>
+    );
   };
 
-  const renderPokemonAbilities = () => {
-    return pokemon.abilities.map((item) => {
-      return <li>{item.ability.name}</li>;
-    });
+  const PokemonAbilities = () => {
+    return (
+      <ul>
+        {pokemon.abilities.map((item) => {
+          return <li>{item.ability.name}</li>;
+        })}
+      </ul>
+    );
   };
 
-  const renderPokemonMoves = () => {
-    return pokemon.moves.map((item) => {
-      return <li>{item.move.name}</li>;
-    });
+  const PokemonMoves = () => {
+    return (
+      <ul>
+        {pokemon.moves.map((item) => {
+          return <li>{item.move.name}</li>;
+        })}
+      </ul>
+    );
   };
 
   return (
@@ -53,13 +65,13 @@ export const PokemonInfo = () => {
       <h3>Altura: {pokemon.height}</h3>
 
       <h3>Tipo(s):</h3>
-      <ul>{renderPokemonType()}</ul>
+      <PokemonTypes />
 
       <h3>Habilidades:</h3>
-      <ul>{renderPokemonAbilities()}</ul>
+      <PokemonAbilities />
 
       <h3>Movimentos:</h3>
-      <ul>{renderPokemonMoves()}</ul>
+      <PokemonMoves />
     </div>
   );
 };
