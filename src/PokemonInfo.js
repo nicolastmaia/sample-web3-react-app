@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const customAxios = axios.create({ baseURL: 'https://pokeapi.co/api/v2/' });
@@ -22,6 +22,7 @@ export const PokemonInfo = () => {
         console.log(error);
       }
     };
+
     loadPokemonInfo();
   }, [pokemonName]);
 

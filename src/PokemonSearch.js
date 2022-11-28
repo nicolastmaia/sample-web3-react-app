@@ -1,5 +1,4 @@
-import './App.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const PokemonSearch = () => {
@@ -11,9 +10,7 @@ const PokemonSearch = () => {
   };
 
   const fetchPokemon = async () => {
-    try {
-      history.push(`/pokemon/${pokemonName}`);
-    } catch (error) {}
+    history.push(`/pokemon/${pokemonName}`);
   };
 
   const handleEnterKeyPress = (event) => {
@@ -24,9 +21,9 @@ const PokemonSearch = () => {
     <div style={{ textAlign: 'center' }}>
       <h1>Digite o nome do pokemon:</h1>
       <input
-        onKeyPress={handleEnterKeyPress}
         type='text'
         onChange={handlePokemonInput}
+        onKeyPress={handleEnterKeyPress}
       />
       <button onClick={fetchPokemon}>Buscar Pokemon</button>
     </div>

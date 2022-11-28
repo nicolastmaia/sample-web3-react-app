@@ -1,6 +1,7 @@
+import React from 'react';
 import { Route, Switch } from 'react-router';
-import { PokemonSearch } from './PokemonSearch';
 import { PokemonInfo } from './PokemonInfo';
+import { PokemonSearch } from './PokemonSearch';
 
 export const Routes = () => {
   return (
